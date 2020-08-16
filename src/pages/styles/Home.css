@@ -1,0 +1,13 @@
+.Home__container {
+  background: url("../../images/stars.svg"), #1b1b25;
+  background-repeat: repeat;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__img1 {
+  display: inline;
+}
