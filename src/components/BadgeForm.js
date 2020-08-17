@@ -11,17 +11,16 @@ export class BadgeForm extends Component {
     console.log("El botón fue clickeado");
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("El formulario fue enviado");
-    console.log(this.state);
-  };
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("El formulario fue enviado");
+  //   console.log(this.state);
+  // };
 
   render() {
     return (
       <div>
-        <h1>New Attendant</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <div className="form-group">
             <label>First Name</label>
             <input
@@ -80,6 +79,11 @@ export class BadgeForm extends Component {
           <button onClick={this.handleClick} className="btn btn-primary">
             Save
           </button>
+          {this.props.error /* If con truthy */ && (
+            <div className="alter alert-danger mb-3" role="alert">
+              {this.props.error.message}
+            </div>
+          )}
         </form>
       </div>
     );

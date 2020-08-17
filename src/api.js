@@ -26,14 +26,15 @@ const api = {
     list() {
       // return []; //Ejemplos datos vacios
       //throw new Error("Not Found"); // Ejemplo error
-      //return callApi("/badges"); //Ejemplo datos completos
-      if (Math.random() > 0.3) {
-        return callApi("/badges");
-      } else {
-        throw new Error("500: Server Error");
-      }
+      return callApi("/badges"); //Ejemplo datos completos
+      // if (Math.random() > 0.3) { //If para que salga error el 30% de las veces
+      //   return callApi("/badges");
+      // } else {
+      //   throw new Error("500: Server Error");
+      // }
     },
     create(badge) {
+      //throw new Error("500: Server error"); //Ejemplo error
       return callApi(`/badges`, {
         method: "POST",
         body: JSON.stringify(badge),
